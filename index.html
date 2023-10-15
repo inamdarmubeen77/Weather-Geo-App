@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="./img/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Montserrat:wght@600&family=Nunito&display=swap"
+        rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather Geo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./global.css">
+</head>
+
+<body id="body" class="loading">
+    <!-- LOADER START -->
+    <div id="main-loader-container" class="loader-container">
+        <span class="loader"></span>
+    </div>
+    <!-- LOADER END -->
+
+
+    <!-- NAVBAR START -->
+    <nav class="navbar navbar-expand-md sticky-top">
+        <div class="container-md">
+
+            <!--Logo-->
+            <a class="navbar-brand text-white d-flex align-items-center fs-2 pt-2" href="#">
+                <img class="logo mx-2 p-0" src="./img/logo.png" alt="Weather Geo Logo" width="50" height="50">
+                Weather Geo</a>
+
+            <!--Menu Icons-->
+            <button class="navbar-toggler navbar-dark border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon text-white"></span>
+            </button>
+            <div class="collapse navbar-collapse navbar-dark" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                    <li class="nav-item m-auto">
+                        <a class="nav-link" aria-current="page" href="#body" onclick="flash(event)">Home</a>
+                    </li>
+                    <li class="nav-item m-auto">
+                        <a class="nav-link" href="#response-data" onclick="flash(event)">Weather</a>
+                    </li>
+                    <li class="nav-item m-auto">
+                        <a class="nav-link" href="#feedback-form" onclick="flash(event)">Feedback</a>
+                    </li>
+                    <li class="nav-item m-auto">
+                        <a class="nav-link" href="#footer" onclick="flash(event)">About</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <!-- NAVBAR END -->
+
+
+    <!-- HEADER START -->
+    <div class="header m-5">
+
+        <!--Auto-typer start-->
+        <h1 class="main_header text-center text-muted">TOO
+            <span id="first-typer" class="typer fw-bold" data-delay="70"
+                data-words="SUNNY&#9728;&#65039;?,RAINY⛈️?,WINDY🍃?,STORMY🌪️?,CLOUDY&#9925;?"
+                data-colors="white"></span><span class="cursor text-danger fw-bold" data-owner="first-typer"></span>
+            <br>WE GOT YOU!
+        </h1>
+        <hr class="text-white">
+        <div class="d-flex align-items-center justify-content-around">
+            <div class="secondary-header text-center text-muted container-md row w-50">
+                <b class="text-muted fs-3">Always stay prepared with</b>
+                <b class="text-muted opacity-75 col-md">Realtime Weather&nbsp;</b>
+                <b class="text-light fs-4 col-md">Weather Geo</b>
+                <b class="text-muted opacity-75 col-md">Weather Forecast&nbsp;</b>
+            </div>
+        </div>
+        <!--Auto-typer end-->
+    </div>
+    <!-- HEADER END -->
+
+
+    <!-- INPUT-1 START -->
+    <div class="input-1-main-div container-md d-flex justify-content-center align-items-center flex-column">
+        <div class="input-expand d-flex flex-column justify-content-center align-items-center m-2 overflow-hidden">
+            <form id="input-1-form" class="position-relative">
+                <input id="input-1" type="text" value="" required>
+                <input id="input-1-submit" type="submit" value="&#129030;">
+                <label for="input-1" class="input-1-label">ENTER <span class="typer" data-delay="80"
+                        data-words="LOCATION, COORDINATES" data-colors="rgba(0, 0, 0, 0.3);"></span></label>
+            </form>
+            <br>
+
+            <!-- Loader-until-data start-->
+            <div id="data_loader_container" class="loader-container">
+                <span class="loader"></span>
+            </div>
+            <!-- Loader-until-data end-->
+
+            <!-- Error Box if data not available -->
+            <div id="display_error" class="hide">
+                <h3 class="fw-bold text-white text-center bg-secondary rounded-5 pt-3 p-2">🛠️UNABLE TO FETCH DATA</h3>
+                <h4 class="text-center text-light fw-bold">What can I do?</h4>
+                <li class="text-center text-muted">Check your inputs / Input a region</li>
+                <li class="text-center text-muted">Check for network issues / connection</li>
+                <li class="text-center text-muted">Get some coffee & please try again later</li>
+            </div>
+
+            <!--Requested-Data Start-->
+            <div id="response-data" class="response-data hide">
+
+                <h1 class="data-header text-center text-light">Weather Information</h1>
+                <!-- <hr> -->
+
+                <!-- Data -->
+                <div id="main_data" class="row text-center p-3">
+                    <h3 id="full_location" class="fs-2 fw-bold text-muted"></h3>
+                    <h6 id="resp_coordinates" class="text-muted"></h6>
+                    <hr>
+                    <div class="col-md">
+                        <img id="weather_icon" src="" alt="weather_icon" class="p-2">
+                        <div class="p-2 m-2"><i
+                                class="text-white fw-light bg-dark rounded-4 p-1 px-3 opacity-40">Weather
+                                Description</i>
+                            <h5 id="resp_weather_desc" class="fs-2 fw-bold text-muted m-1"></h5>
+                        </div>
+                        <div class="p-2 m-2"><i
+                                class="text-white fw-light bg-dark rounded-4 p-1 px-3 opacity-40">Temperature</i>
+                            <h5 id="resp_temperature" class="fs-2 fw-bold text-muted m-1"></h5>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="p-2 m-2"><i class="text-white fw-light bg-dark rounded-4 p-1 px-3 opacity-40">Wind
+                                Speed</i>
+                            <h5 id="resp_wind_speed" class="fs-2 fw-bold text-muted m-1"></h5>
+                        </div>
+                        <div class="p-2 m-2"><i class="text-white fw-light bg-dark rounded-4 p-1 px-3 opacity-40">Wind
+                                Degree</i><br>
+                            <span id="resp_wind_deg" class="fs-2 fw-bold text-muted m-1 inline-block"></span>
+                            <span class="wind-deg-arrow fs-2">↑</span>
+                        </div>
+                        <div class="p-2 m-2"><i class="text-white fw-light bg-dark rounded-4 p-1 px-3 opacity-40">Wind
+                                Direction</i>
+                            <h5 id="resp_wind_dir" class="fs-2 fw-bold text-muted m-1"></h5>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="p-2 m-2"><i
+                                class="text-white fw-light bg-dark rounded-4 p-1 px-3 opacity-40">Timezone</i>
+                            <h5 id="resp_timezone" class="fs-2 fw-bold text-muted m-1"></h5>
+                        </div>
+                        <div class="p-2 m-2"><i
+                                class="text-white fw-light bg-dark rounded-4 p-1 px-3 opacity-40">Humidity</i>
+                            <h5 id="resp_humidity" class="fs-2 fw-bold text-muted m-1"></h5>
+                        </div>
+                        <div class="p-2 m-2"><i
+                                class="text-white fw-light bg-dark rounded-4 p-1 px-3 opacity-40">Precipitation</i>
+                            <h5 id="resp_precipitation" class="fs-2 fw-bold text-muted m-1"></h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3 Day Forecast -->
+                <hr>
+                <h1 class="data-header text-center text-light">Weather Forecast</h1>
+                <div class="forecast-main-div">
+                    <!-- Div below will generate data and loop until required nos. of forecasts days from my JS -->
+                    <div id="per-day-forecast">
+
+                    </div>
+                </div>
+                <h6 class="data-header text-center fst-light text-light">
+                    <b class="text-danger text-center bg-light rounded-2 p-1">
+                        NOTE</b> Please be advised that due to technical constraints, it is only possible to display a
+                    forecast for a maximum of <span class="data-counter">three</span> days.
+                </h6>
+
+            </div>
+            <!--Requested-Data End-->
+        </div>
+    </div>
+    <!-- INPUT-1 END -->
+
+
+    <!-- FEEDBACK-FORM START -->
+    <div class="input-2-main-div overflow-hidden d-flex justify-content-center align-items-center flex-column m-5 p-4">
+        <form id="feedback-form" action="https://formsubmit.co/inamdarmubeen77@gmail.com" method="POST"
+            class="container-md position-relative p-5">
+            <h1 class="text-center text-muted fw-bold ">Provide Feedback</h1>
+            <h6 class="text-center text-muted fw-bold pb-4">Your feedback isn't just appreciated, it's celebrated! ❤️
+            </h6>
+            <input id="input-2" type="text" name="Name" class="m-2 text-capitalize fs-4" placeholder="Your Name"
+                required>
+            <input id="input-2-email" type="email" name="email" class="m-2 fs-4" placeholder="Your Email" required>
+            <textarea id="feedback-message" name="Message/Feedback" class="m-2 fs-4" placeholder="Feedback / Message"
+                rows="5"></textarea>
+            <button id="input-2-submit" class="m-2 fs-4" type="submit">Send</button>
+
+            <!-- Below are some features of the webite ~ formsubmit.co -->
+            <input type="hidden" name="_autoresponse"
+                value="Thank you for reaching out. I have received your message and will definitely look into it!😊">
+            <!-- <input type="hidden" name="_captcha" value="false"> -->
+            <input type="hidden" name="_template" value="box">
+        </form>
+    </div>
+    <!-- FEEDBACK-FORM END -->
+
+
+    <!-- FOOTER START -->
+    <span class="aboutButton p-4 m-0" type="button" onclick="toggleAboutSection()">
+        <div id="rotate_button">▼</div></span>
+    <footer id="footer" class="footer text-center text-muted mt-0">
+        <!-- Grid container -->
+        <div class="container-md p-4 pb-0">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+
+                <!-- Instagram -->
+                <a class="social-media-btn btn btn-primary btn-floating m-2"
+                    style="background: linear-gradient(to top left, #feda75, #d62976, #962fbf, #4f5bd5);"
+                    href="https://www.instagram.com/mubeen.inamdar/" target="_blank" role="button" title="Instagram">
+                    <i class="fab fa-instagram"></i></a>
+
+                <!-- Linkedin -->
+                <a class="social-media-btn btn btn-primary btn-floating m-2" style="background-color: #0082ca;"
+                    href="https://www.linkedin.com/in/mubeen-inamdar-6360b1229/" target="_blank" role="button"
+                    title="Linkedin">
+                    <i class="fab fa-linkedin-in"></i></a>
+
+                <!-- Github -->
+                <a class="social-media-btn btn btn-primary btn-floating m-2" style="background-color: #333333;"
+                    href="#!" target="_blank" role="button" title="Github">
+                    <i class="fab fa-github"></i></a>
+
+            </section>
+            <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Developer's Words Start -->
+        <div id="disclaimer-popup" class="popup">
+            <hr>
+            <div class="popup-content container-md p-4">
+                <!-- <p class="close text-right" onclick="hideDisclaimer()">&times;</p> -->
+                <h3 class="text-dark fw-bold">About This Website</h3>
+                <p>
+                    This website was created with care, using a blend of Vanilla JavaScript creativity and a set of
+                    powerful tools like Bootstrap, ChatGPT & the RapidAPI {<i>Weather API</i> }.
+                    <br>It's a testament to my ability to harness technology to deliver a seamless user experience.
+                </p>
+                <p>
+                    <b class="text-danger">IMPORTANT</b>
+                    Kindly be aware that the content within this website has been meticulously crafted by me, without
+                    any reliance on external sources.
+                    <br>It is important to note that this content is not available for unrestricted use.
+                </p>
+            </div>
+        </div>
+        <!-- Developer's Words End -->
+
+        <!-- Copyright -->
+        <div class="text-muted text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © <b id="copyrightYear" title="Current Year">2023</b> Ownership:
+            <a class="text-muted" href="mailto:inamdarmubeen77@gmail.com">Mubeen Inamdar</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+    <!-- FOOTER END -->
+
+
+
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script async src="https://unpkg.com/typer-dot-js@0.1.0/typer.js"></script>
+    <script src="script.js" type="text/javascript" defer></script>
+</body>
+
+</html>
