@@ -73,12 +73,14 @@
             <br>WE GOT YOU!
         </h1>
         <hr class="text-white">
-        <div class="d-flex align-items-center justify-content-around">
-            <div class="secondary-header text-center text-muted container-md row w-50">
-                <b class="text-muted fs-3">Always stay prepared with</b>
-                <b class="text-muted opacity-75 col-md">Realtime Weather&nbsp;</b>
-                <b class="text-light fs-4 col-md">Weather Geo</b>
-                <b class="text-muted opacity-75 col-md">Weather Forecast&nbsp;</b>
+        <div class="extra-header">
+            <div class="d-flex align-items-center justify-content-around">
+                <div class="secondary-header text-center text-muted container-md row w-50">
+                    <b class="text-muted fs-3">Always stay prepared with</b>
+                    <b class="text-muted opacity-75 col-md">Realtime Weather&nbsp;</b>
+                    <b class="text-light fs-4 col-md">Weather Geo</b>
+                    <b class="text-muted opacity-75 col-md">Weather Forecast&nbsp;</b>
+                </div>
             </div>
         </div>
         <!--Auto-typer end-->
@@ -91,7 +93,7 @@
         <div class="input-expand d-flex flex-column justify-content-center align-items-center m-2 overflow-hidden">
             <form id="input-1-form" class="position-relative">
                 <input id="input-1" type="text" value="" required>
-                <input id="input-1-submit" type="submit" value="&#129030;">
+                <input id="input-1-submit" type="submit" value="→">
                 <label for="input-1" class="input-1-label">ENTER <span class="typer" data-delay="80"
                         data-words="LOCATION, COORDINATES" data-colors="rgba(0, 0, 0, 0.3);"></span></label>
             </form>
@@ -126,41 +128,41 @@
                     <div class="col-md">
                         <img id="weather_icon" src="" alt="weather_icon" class="p-2">
                         <div class="p-2 m-2"><i
-                                class="text-white fw-light bg-dark rounded-4 p-1 px-3 opacity-40">Weather
+                                class="fs-3 text-white fw-light bg-dark rounded-4 p-1 px-3 opacity-40">Weather
                                 Description</i>
                             <h5 id="resp_weather_desc" class="fs-2 fw-bold text-muted m-1"></h5>
                         </div>
                         <div class="p-2 m-2"><i
-                                class="text-white fw-light bg-dark rounded-4 p-1 px-3 opacity-40">Temperature</i>
+                                class="fs-3 text-white fw-light bg-dark rounded-4 p-1 px-3 opacity-40">Temperature</i>
                             <h5 id="resp_temperature" class="fs-2 fw-bold text-muted m-1"></h5>
                         </div>
                     </div>
                     <div class="col-md">
-                        <div class="p-2 m-2"><i class="text-white fw-light bg-dark rounded-4 p-1 px-3 opacity-40">Wind
+                        <div class="p-2 m-2"><i class="fs-3 text-white fw-light bg-dark rounded-4 p-1 px-3 opacity-40">Wind
                                 Speed</i>
                             <h5 id="resp_wind_speed" class="fs-2 fw-bold text-muted m-1"></h5>
                         </div>
-                        <div class="p-2 m-2"><i class="text-white fw-light bg-dark rounded-4 p-1 px-3 opacity-40">Wind
+                        <div class="p-2 m-2"><i class="fs-3 text-white fw-light bg-dark rounded-4 p-1 px-3 opacity-40">Wind
                                 Degree</i><br>
                             <span id="resp_wind_deg" class="fs-2 fw-bold text-muted m-1 inline-block"></span>
                             <span class="wind-deg-arrow fs-2">↑</span>
                         </div>
-                        <div class="p-2 m-2"><i class="text-white fw-light bg-dark rounded-4 p-1 px-3 opacity-40">Wind
+                        <div class="p-2 m-2"><i class="fs-3 text-white fw-light bg-dark rounded-4 p-1 px-3 opacity-40">Wind
                                 Direction</i>
                             <h5 id="resp_wind_dir" class="fs-2 fw-bold text-muted m-1"></h5>
                         </div>
                     </div>
                     <div class="col-md">
                         <div class="p-2 m-2"><i
-                                class="text-white fw-light bg-dark rounded-4 p-1 px-3 opacity-40">Timezone</i>
+                                class="fs-3 text-white fw-light bg-dark rounded-4 p-1 px-3 opacity-40">Timezone</i>
                             <h5 id="resp_timezone" class="fs-2 fw-bold text-muted m-1"></h5>
                         </div>
                         <div class="p-2 m-2"><i
-                                class="text-white fw-light bg-dark rounded-4 p-1 px-3 opacity-40">Humidity</i>
+                                class="fs-3 text-white fw-light bg-dark rounded-4 p-1 px-3 opacity-40">Humidity</i>
                             <h5 id="resp_humidity" class="fs-2 fw-bold text-muted m-1"></h5>
                         </div>
                         <div class="p-2 m-2"><i
-                                class="text-white fw-light bg-dark rounded-4 p-1 px-3 opacity-40">Precipitation</i>
+                                class="fs-3 text-white fw-light bg-dark rounded-4 p-1 px-3 opacity-40">Precipitation</i>
                             <h5 id="resp_precipitation" class="fs-2 fw-bold text-muted m-1"></h5>
                         </div>
                     </div>
@@ -251,12 +253,12 @@
             <div class="popup-content container-md p-4">
                 <!-- <p class="close text-right" onclick="hideDisclaimer()">&times;</p> -->
                 <h3 class="text-dark fw-bold">About This Website</h3>
-                <p>
+                <p class="about-paragraph">
                     This website was created with care, using a blend of Vanilla JavaScript creativity and a set of
                     powerful tools like Bootstrap, ChatGPT & the RapidAPI {<i>Weather API</i> }.
                     <br>It's a testament to my ability to harness technology to deliver a seamless user experience.
                 </p>
-                <p>
+                <p class="about-paragraph">
                     <b class="text-danger">IMPORTANT</b>
                     Kindly be aware that the content within this website has been meticulously crafted by me, without
                     any reliance on external sources.
@@ -267,7 +269,7 @@
         <!-- Developer's Words End -->
 
         <!-- Copyright -->
-        <div class="text-muted text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        <div class="text-muted text-center p-3 fs-4" style="background-color: rgba(0, 0, 0, 0.2);">
             © <b id="copyrightYear" title="Current Year">2023</b> Ownership:
             <a class="text-muted" href="mailto:inamdarmubeen77@gmail.com">Mubeen Inamdar</a>
         </div>

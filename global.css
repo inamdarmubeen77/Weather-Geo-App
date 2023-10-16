@@ -534,3 +534,170 @@ body.loading {
 }
 
 /* Footer End */
+
+/* MEDIA QUERIES --- MEDIA QUERIES --- MEDIA QUERIES --- MEDIA QUERIES --- MEDIA QUERIES --- MEDIA QUERIES --- */
+
+@media only screen and (width < 600px) {
+
+    .logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    .navbar-toggler-icon {
+        width: 1em;
+        height: 1em;
+    }
+
+    .main_header {
+        font-weight: bold;
+        font-size: calc(1rem + 1.5dvw);
+    }
+
+    .extra-header {
+        display: none;
+    }
+
+    .input-1-main-div-expand {
+        cursor: default;
+        top: auto;
+        height: fit-content;
+        width: 90dvw;
+        padding: 1em;
+        border: 0px;
+        border-radius: 3em;
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+        background: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(50px);
+        transition: ease 0.5s;
+        transition-property: padding, border, box-shadow;
+    }
+
+    #input-1-submit {
+        min-width: 3.5rem;
+    }
+
+    .input-1-label {
+        cursor: pointer;
+        user-select: none;
+        padding: 0;
+        font-size: calc(0.6rem + 0.5dvw);
+        color: rgba(0, 0, 0, 0.3);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        z-index: 999;
+        line-height: 1em;
+        transition: all ease-in-out 0.1s;
+    }
+
+    #input-1,
+    #input-2,
+    #input-2-email,
+    #feedback-message {
+        cursor: pointer;
+        color: rgba(0, 0, 0, 0.7);
+        text-align: center;
+        font-size: calc(1.5em + 0.5vw);
+        padding: 4dvh 2dvh 2dvh 2dvh;
+        height: calc(4dvh + 2rem);
+        width: calc(5dvw + 10em);
+        border: 0;
+        border-radius: 5em;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        transition-property: box-shadow, background, color;
+        transition-duration: 0.3s;
+    }
+
+    #input-2,
+    #input-2-email,
+    #feedback-message {
+        text-align: center;
+        font-size: calc(1.5em + 0.5vw);
+        padding: 2dvh;
+        height: auto;
+        width: auto;
+        border: 0;
+        border-radius: 1rem;
+    }
+
+    .per-day-forecast {
+        border-radius: 2em;
+    }
+
+    .about-paragraph {
+        font-size: 0.6rem;
+    }
+
+    .aboutButton {
+        width: 5em;
+        height: 3em;
+    }
+
+    .forecast_weather_icon,
+    #weather_icon {
+        padding: 0.5rem;
+    }
+
+    .rounded-2 {
+        border-radius: 0.2rem !important;
+    }
+
+    .fs-5 {
+        font-size: 0.9rem !important;
+    }
+
+    .fs-4 {
+        font-size: 0.8rem !important;
+    }
+
+    .fs-2 {
+        font-size: calc(1rem + .9dvw) !important;
+    }
+
+    .fs-3 {
+        font-size: calc(0.6rem + .5dvw) !important;
+    }
+
+    .main-data-html {
+        font-size: 0.7rem !important;
+
+    }
+
+    .p-1 {
+        padding: 0.1rem !important;
+    }
+
+    .p-2 {
+        padding: 0.2rem !important;
+    }
+
+    .p-5 {
+        padding: 2rem !important;
+    }
+
+    .m-5 {
+        margin: 2rem !important;
+    }
+
+    .m-2 {
+        margin: 0.2rem !important;
+    }
+
+    .h1,
+    h1 {
+        font-size: calc(0.9rem + 1.5dvw);
+    }
+
+    .h6,
+    h6 {
+        font-size: 0.7rem;
+    }
+
+
+
+    
+}

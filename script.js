@@ -183,7 +183,7 @@ input_1_form.addEventListener('submit', async function (event) {
                         <img class="forecast_weather_icon" src="${result.forecast.forecastday[i].day.condition.icon}" alt="forecast_weather_icon">
                     </div>
                     <div class="col-md weather-forecast-details p-2 pb-0">
-                        <span>
+                        <span class="main-data-html">
                             Condition <b class="fs-5">${result.forecast.forecastday[i].day.condition.text}</b><br>
                             Temperature <b class="fs-5">${result.forecast.forecastday[i].day.avgtemp_c}</b>°c / <b class="fs-5">${result.forecast.forecastday[i].day.avgtemp_f}</b>°f<br>
                             Humidity <b class="fs-5">${result.forecast.forecastday[i].day.avghumidity}</b>% (percent)<br>
@@ -191,7 +191,7 @@ input_1_form.addEventListener('submit', async function (event) {
                             </span>
                             </div>
                             <div class="col-md forecast_more_details p-2 pt-0">
-                            <span>
+                            <span class="main-data-html">
                             Wind Speed <b class="fs-5">${result.forecast.forecastday[i].day.maxwind_kph}</b>kph / <b class="fs-5">${result.forecast.forecastday[i].day.maxwind_mph}</b>mph<br>
                             Max Temperature <b class="fs-5">${result.forecast.forecastday[i].day.maxtemp_c}</b>°c / <b class="fs-5">${result.forecast.forecastday[i].day.maxtemp_f}</b>°f<br>
                             Min Temperature <b class="fs-5">${result.forecast.forecastday[i].day.mintemp_c}</b>°c / <b class="fs-5">${result.forecast.forecastday[i].day.mintemp_f}</b>°f<br>
