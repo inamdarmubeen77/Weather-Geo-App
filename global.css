@@ -697,7 +697,10 @@ body.loading {
         font-size: 0.7rem;
     }
 
+    #input-1-submit:hover,
+    #input-2-submit:hover {
+        animation: none;
+    }
 
 
-    
 }
