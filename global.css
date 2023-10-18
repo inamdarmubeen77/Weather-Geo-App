@@ -537,7 +537,7 @@ body.loading {
 
 /* MEDIA QUERIES --- MEDIA QUERIES --- MEDIA QUERIES --- MEDIA QUERIES --- MEDIA QUERIES --- MEDIA QUERIES --- */
 
-@media only screen and (device-width < 600px) {
+@media (max-width: 600px) {
 
     .logo {
         width: 30px;
