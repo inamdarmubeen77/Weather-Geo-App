@@ -135,7 +135,7 @@ body.loading {
     background-color: rgba(238, 234, 230, 1);
     -webkit-backdrop-filter: blur(40px);
     backdrop-filter: blur(40px);
-    height: 100dvh !important;
+    height: 100vh !important;
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -305,14 +305,14 @@ body.loading {
 
 .main_header {
     font-weight: bold;
-    font-size: calc(1.5rem + 1.5dvw);
+    font-size: calc(1.5rem + 1.5vw);
 }
 
 .secondary-header b {
     font-family: 'Nunito', sans-serif;
     ;
-    line-height: calc(1rem + 2dvw);
-    font-size: calc(0.8rem + 0.5dvw);
+    line-height: calc(1rem + 2vw);
+    font-size: calc(0.8rem + 0.5vw);
 }
 
 /* Header End */
@@ -332,9 +332,9 @@ body.loading {
     color: rgba(0, 0, 0, 0.7);
     text-align: center;
     font-size: calc(1.5em + 0.5vw);
-    padding: 4dvh 2dvh 2dvh 2dvh;
-    height: calc(5dvh + 1.5em);
-    width: calc(5dvw + 15em);
+    padding: 4vh 2vh 2vh 2vh;
+    height: calc(5vh + 1.5em);
+    width: calc(5vw + 15em);
     border: 0;
     border-radius: 5em;
     background: rgba(255, 255, 255, 0.2);
@@ -379,7 +379,7 @@ body.loading {
     -ms-user-select: none;
     user-select: none;
     padding: 0;
-    font-size: calc(1em + 0.5dvw);
+    font-size: calc(1em + 0.5vw);
     color: rgba(0, 0, 0, 0.3);
     top: 50%;
     left: 50%;
@@ -396,7 +396,7 @@ body.loading {
 
 #input-1:focus~label {
     color: rgba(0, 0, 0, 0.6);
-    font-size: calc(0.5em + 0.5dvw);
+    font-size: calc(0.5em + 0.5vw);
     top: 20%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
@@ -423,7 +423,7 @@ body.loading {
     background: linear-gradient(to bottom right, #233f3892, #233F38);
     color: rgb(255, 255, 255);
     opacity: 0.9;
-    font-size: calc(1em + 0.5dvw);
+    font-size: calc(1em + 0.5vw);
     padding: 0;
     -webkit-transition: all ease 0.5s;
     -o-transition: all ease 0.5s;
@@ -642,7 +642,7 @@ body.loading {
     font-size: calc(1em + 0.5vw);
     padding: 1em;
     height: 100%;
-    width: calc(5dvw + 15em);
+    width: calc(5vw + 15em);
     border: 0;
     border-radius: 1em;
     background: rgba(255, 255, 255, 0.2);
@@ -669,7 +669,7 @@ body.loading {
     background: linear-gradient(to bottom right, #233f384c, #233F38);
     color: rgb(255, 255, 255);
     opacity: 0.9;
-    font-size: calc(1em + 0.5dvw);
+    font-size: calc(1em + 0.5vw);
     -webkit-transition: all ease 0.5s;
     -o-transition: all ease 0.5s;
     transition: all ease 0.5s;
@@ -763,7 +763,7 @@ body.loading {
 
     .main_header {
         font-weight: bold;
-        font-size: calc(1rem + 1.5dvw);
+        font-size: calc(1rem + 1.5vw);
     }
 
     .extra-header {
@@ -776,7 +776,7 @@ body.loading {
         height: -webkit-fit-content;
         height: -moz-fit-content;
         height: fit-content;
-        width: 90dvw;
+        width: 90vw;
         padding: 1em;
         border: 0px;
         border-radius: 3em;
@@ -806,7 +806,7 @@ body.loading {
         -ms-user-select: none;
         user-select: none;
         padding: 0;
-        font-size: calc(0.6rem + 0.5dvw);
+        font-size: calc(0.6rem + 0.5vw);
         color: rgba(0, 0, 0, 0.3);
         top: 50%;
         left: 50%;
@@ -829,9 +829,9 @@ body.loading {
         color: rgba(0, 0, 0, 0.7);
         text-align: center;
         font-size: calc(1.5em + 0.5vw);
-        padding: 4dvh 2dvh 2dvh 2dvh;
-        height: calc(4dvh + 2rem);
-        width: calc(5dvw + 10em);
+        padding: 4vh 2vh 2vh 2vh;
+        height: calc(4vh + 2rem);
+        width: calc(5vw + 10em);
         border: 0;
         border-radius: 5em;
         background: rgba(255, 255, 255, 0.2);
@@ -854,7 +854,7 @@ body.loading {
     #feedback-message {
         text-align: center;
         font-size: calc(1.5em + 0.5vw);
-        padding: 2dvh;
+        padding: 2vh;
         height: auto;
         width: auto;
         border: 0;
@@ -892,11 +892,11 @@ body.loading {
     }
 
     .fs-2 {
-        font-size: calc(1rem + .9dvw) !important;
+        font-size: calc(1rem + .9vw) !important;
     }
 
     .fs-3 {
-        font-size: calc(0.6rem + .5dvw) !important;
+        font-size: calc(0.6rem + .5vw) !important;
     }
 
     .main-data-html {
@@ -926,7 +926,7 @@ body.loading {
 
     .h1,
     h1 {
-        font-size: calc(0.9rem + 1.5dvw);
+        font-size: calc(0.9rem + 1.5vw);
     }
 
     .h6,
